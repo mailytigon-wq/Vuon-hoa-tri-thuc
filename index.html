@@ -1,0 +1,1086 @@
+ <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VƯỜN HOA TRI THỨC – BÉ CHINH PHỤC TOÁN VÀ TIẾNG VIỆT</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter & Nunito/Comfortaa for Kids -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 50%, #f0fdf4 100%);
+            min-height: 100vh;
+            user-select: none;
+        }
+        .title-font {
+            font-family: 'Comfortaa', cursive;
+        }
+        .flower-svg {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .flower-bloomed {
+            transform: scale(1.12) rotate(5deg);
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+        }
+        .pulse-btn {
+            animation: pulse-animation 2s infinite;
+        }
+        /* 4D / 3D Volumetric Button Styling */
+        .btn-4d {
+            background: linear-gradient(145deg, #ffffff, #f1f5f9);
+            box-shadow: 0 8px 0 #cbd5e1, 0 15px 20px rgba(0, 0, 0, 0.12), inset 0 2px 2px rgba(255, 255, 255, 0.9);
+            transform: translateY(0);
+            transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-4d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 11px 0 #cbd5e1, 0 18px 25px rgba(0, 0, 0, 0.15), inset 0 2px 2px rgba(255, 255, 255, 1);
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+        }
+        .btn-4d:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #94a3b8, 0 5px 10px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- TOP BAR CONTROL -->
+    <header class="w-full bg-white/80 backdrop-blur-md border-b border-pink-100 py-3 px-4 sticky top-0 z-40 flex justify-between items-center shadow-sm">
+        <div class="flex items-center space-x-2">
+            <span class="text-2xl">🌸</span>
+            <h1 class="title-font font-bold text-lg md:text-xl text-pink-600 tracking-wide hidden sm:block">VƯỜN HOA TRI THỨC</h1>
+        </div>
+        <div class="flex items-center space-x-3">
+            <button id="sound-toggle" onclick="toggleSound()" class="px-3 py-1.5 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-700 font-bold text-sm flex items-center gap-1 transition">
+                <span id="sound-icon">🔊</span> <span id="sound-text" class="hidden md:inline">Âm thanh: Bật</span>
+            </button>
+            <button id="speech-toggle" onclick="toggleSpeech()" class="px-3 py-1.5 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-700 font-bold text-sm flex items-center gap-1 transition">
+                <span id="speech-icon">🗣️</span> <span id="speech-text" class="hidden md:inline">Giọng đọc: Bật</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container mx-auto px-4 py-4 max-w-5xl flex-grow flex flex-col justify-center">
+
+        <!-- SCREEN 1: START SCREEN -->
+        <section id="start-screen" class="bg-white/90 rounded-3xl p-6 md:p-10 shadow-xl border-4 border-pink-200 text-center relative overflow-hidden my-auto">
+            <!-- Decorative Cloud & Sun -->
+            <div class="absolute -top-6 -left-6 text-6xl opacity-80 pointer-events-none">☁️</div>
+            <div class="absolute -top-4 -right-4 text-6xl opacity-90 animate-spin pointer-events-none" style="animation-duration: 20s;">☀️</div>
+            
+            <div class="max-w-2xl mx-auto space-y-6 relative z-10">
+                <div class="inline-block bg-pink-100 text-pink-600 px-4 py-1.5 rounded-full font-bold text-sm mb-2 shadow-inner">
+                    CÔ MAI LY - TH SÔNG CẦU
+                </div>
+                
+                <h1 class="title-font text-3xl md:text-5xl font-extrabold text-pink-600 leading-tight">
+                    VƯỜN HOA TRI THỨC
+                </h1>
+                <h2 class="text-xl md:text-2xl font-bold text-emerald-600">
+                    BÉ CHINH PHỤC TOÁN VÀ TIẾNG VIỆT
+                </h2>
+
+                <!-- Avatar Guide -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 bg-emerald-50 p-4 rounded-2xl border-2 border-emerald-200">
+                    <div class="text-6xl animate-bounce">🐝</div>
+                    <p class="text-left text-slate-700 font-medium text-base leading-relaxed">
+                        "Xin chào các bạn nhỏ! Chào mừng các bạn đến với <b>Vườn hoa tri thức</b>. Hôm nay, chúng mình sẽ cùng vượt qua 30 thử thách Toán và Tiếng Việt để làm cho khu vườn trở nên thật rực rỡ nhé!"
+                    </p>
+                </div>
+
+                <!-- Input Name Form -->
+                <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl border-2 border-pink-200 space-y-4 shadow-sm">
+                    <label for="student-name" class="block font-extrabold text-pink-700 text-lg uppercase tracking-wide">
+                        BÉ HÃY NHẬP TÊN CỦA MÌNH
+                    </label>
+                    <input type="text" id="student-name" placeholder="Ví dụ: Minh Anh..." class="w-full max-w-md px-5 py-3 rounded-full border-2 border-pink-300 focus:outline-none focus:border-pink-500 text-center font-bold text-xl text-slate-700 shadow-inner">
+                    <p id="name-error" class="text-red-500 text-sm font-bold hidden">Bé ơi, hãy nhập tên trước khi bắt đầu nhé!</p>
+                </div>
+
+                <!-- Start Button -->
+                <button onclick="startGame()" class="pulse-btn w-full max-w-md bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-extrabold text-xl md:text-2xl py-4 rounded-full shadow-lg transform transition active:scale-95 border-b-4 border-rose-700">
+                    🚀 BẮT ĐẦU HÀNH TRÌNH
+                </button>
+            </div>
+        </section>
+
+        <!-- SCREEN 2: GAMEPLAY SCREEN -->
+        <section id="game-screen" class="hidden flex-col gap-4 my-auto">
+            
+            <!-- PROGRESS BAR & STATS HEADER -->
+            <div class="bg-white/90 rounded-2xl p-4 shadow-md border-2 border-emerald-100 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-xl">👤</span>
+                    <span id="display-student-name" class="font-extrabold text-pink-600 text-lg">Học sinh</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-3 font-bold text-sm md:text-base">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">📝 Tiến độ: <span id="stat-progress">0/30</span></span>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">✅ Đúng: <span id="stat-correct">0</span></span>
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">⭐ Điểm: <span id="stat-score">0</span></span>
+                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full">🌸 Hoa nở: <span id="stat-flowers">0/30</span></span>
+                </div>
+                <!-- Progress Line -->
+                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden mt-1">
+                    <div id="progress-bar-fill" class="bg-gradient-to-r from-emerald-400 to-pink-500 h-full transition-all duration-300" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- GARDEN DISPLAY (30 FLOWERS GRID) -->
+            <div class="bg-emerald-100/90 rounded-3xl p-4 shadow-inner border-4 border-emerald-300 relative overflow-hidden">
+                <div class="flex justify-between items-center mb-2 px-2">
+                    <span class="font-extrabold text-emerald-800 text-xs md:text-sm">🌸 KHU VƯỜN TRI THỨC (30 BÔNG HOA)</span>
+                    <span class="text-xs font-bold text-slate-600 bg-white/70 px-2 py-0.5 rounded-full">1-15: Toán | 16-30: Tiếng Việt</span>
+                </div>
+                <!-- 30 Flowers Container Grid -->
+                <div id="garden-grid" class="grid grid-cols-6 sm:grid-cols-10 md:grid-cols-15 gap-1.5 md:gap-2 justify-items-center bg-emerald-200/50 p-3 rounded-2xl border border-emerald-300">
+                    <!-- Dynamic 30 SVG Flowers -->
+                </div>
+            </div>
+
+            <!-- QUESTION CARD -->
+            <div class="bg-white/95 rounded-3xl p-5 md:p-8 shadow-xl border-4 border-pink-200 flex flex-col justify-between min-h-[380px] relative">
+                
+                <!-- Category Badge & Read Question Button -->
+                <div class="flex justify-between items-center mb-3">
+                    <span id="subject-badge" class="px-4 py-1 rounded-full text-white font-extrabold text-sm shadow">
+                        MÔN TOÁN
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <button onclick="readQuestionText()" class="bg-pink-100 hover:bg-pink-200 text-pink-700 font-bold px-3 py-1 rounded-full text-sm flex items-center gap-1 transition">
+                            🔊 Đọc câu hỏi
+                        </button>
+                        <span id="question-number-tag" class="font-extrabold text-slate-400 text-lg">Câu 1/30</span>
+                    </div>
+                </div>
+
+                <!-- Main Question Content Area -->
+                <div class="my-auto space-y-4">
+                    <h3 id="question-text" class="text-xl md:text-2xl font-extrabold text-slate-800 text-center leading-snug">
+                        Đang tải câu hỏi...
+                    </h3>
+
+                    <!-- Visual Illustration Box -->
+                    <div id="visual-box" class="flex justify-center items-center py-2 min-h-[90px]">
+                        <!-- Dynamic Visuals -->
+                    </div>
+
+                    <!-- Feedback message box -->
+                    <div id="feedback-box" class="hidden text-center py-2 px-4 rounded-2xl font-bold text-lg animate-bounce">
+                        <!-- Correct/Incorrect message -->
+                    </div>
+
+                    <!-- Answers Options Area -->
+                    <div id="options-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                        <!-- Dynamic Options -->
+                    </div>
+                </div>
+
+                <!-- Footer Hint -->
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500 font-semibold">
+                    <span>💡 Chọn một đáp án đúng nhất bé nhé!</span>
+                    <span id="attempts-left-tag" class="text-amber-600 font-bold">Lượt làm: 2/2</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SCREEN 3: END/RESULT SCREEN -->
+        <section id="end-screen" class="hidden bg-white/95 rounded-3xl p-6 md:p-10 shadow-2xl border-4 border-pink-300 text-center relative my-auto">
+            <div class="max-w-2xl mx-auto space-y-6">
+                <!-- Celebration Icon -->
+                <div class="text-6xl md:text-7xl animate-bounce">🎉 🌸 🏆</div>
+                
+                <h2 class="title-font text-3xl md:text-4xl font-black text-pink-600">
+                    CHÚC MỪNG CON!
+                </h2>
+                <p class="text-slate-600 font-bold text-lg">
+                    CON ĐÃ HOÀN THÀNH HÀNH TRÌNH KHÁM PHÁ VƯỜN HOA TRI THỨC!
+                </p>
+
+                <!-- Result Card -->
+                <div class="bg-gradient-to-br from-amber-50 to-pink-50 p-6 rounded-3xl border-2 border-amber-200 shadow-sm space-y-3">
+                    <h3 class="text-xl font-extrabold text-slate-700">Tên học sinh: <span id="final-name" class="text-pink-600"></span></h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 max-w-md mx-auto pt-2">
+                        <div class="bg-white p-3 rounded-2xl border border-pink-100 shadow-sm">
+                            <span class="block text-slate-500 text-xs font-bold">Số câu đúng</span>
+                            <span id="final-correct" class="text-2xl font-black text-emerald-600">0/30</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-2xl border border-pink-100 shadow-sm">
+                            <span class="block text-slate-500 text-xs font-bold">Số hoa đã nở</span>
+                            <span id="final-flowers" class="text-2xl font-black text-pink-600">0/30</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <span class="block text-slate-500 text-xs font-bold">TỔNG ĐIỂM</span>
+                        <span id="final-score" class="text-4xl font-black text-amber-500">0/300</span>
+                    </div>
+
+                    <div id="rank-badge" class="inline-block px-6 py-2 rounded-full font-black text-lg text-white shadow-md">
+                        BÔNG HOA XUẤT SẮC
+                    </div>
+                </div>
+
+                <!-- Teacher Message -->
+                <div class="bg-emerald-50 p-5 rounded-2xl border-2 border-emerald-200 text-left space-y-2">
+                    <p class="font-extrabold text-emerald-800 text-center md:text-left">
+                        💖 CÔ MAI LY CHÚC MỪNG CON ĐÃ HOÀN THÀNH BÀI TẬP!
+                    </p>
+                    <p class="text-slate-700 italic text-sm md:text-base leading-relaxed">
+                        "Cô khen con đã rất cố gắng! Hãy tiếp tục chăm chỉ học tập để mỗi ngày có thêm thật nhiều bông hoa tri thức nhé!"
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+                    <button onclick="restartGame()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-lg py-3 px-8 rounded-full shadow-lg transform transition active:scale-95">
+                        🔄 CHƠI LẠI
+                    </button>
+                    <button onclick="toggleReviewModal(true)" class="bg-blue-500 hover:bg-blue-600 text-white font-extrabold text-lg py-3 px-8 rounded-full shadow-lg transform transition active:scale-95">
+                        📖 XEM LẠI KẾT QUẢ
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- REVIEW MODAL -->
+    <div id="review-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border-4 border-pink-200">
+            <div class="bg-pink-500 text-white p-4 flex justify-between items-center">
+                <h3 class="font-extrabold text-xl">📖 XEM LẠI 30 CÂU HỎI & ĐÁP ÁN</h3>
+                <button onclick="toggleReviewModal(false)" class="bg-pink-700 hover:bg-pink-800 w-8 h-8 rounded-full font-bold flex items-center justify-center">✕</button>
+            </div>
+            <div id="review-list" class="p-4 overflow-y-auto space-y-3 flex-grow text-sm">
+                <!-- Dynamically filled review items -->
+            </div>
+            <div class="p-3 bg-slate-100 text-center">
+                <button onclick="toggleReviewModal(false)" class="bg-slate-700 hover:bg-slate-800 text-white font-bold px-6 py-2 rounded-full">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="w-full text-center py-3 text-xs text-slate-500 font-bold">
+        Vườn Hoa Tri Thức © 2026 - Phần mềm Ôn tập Toán & Tiếng Việt Lớp 1
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        /* ---------------------------------------------------
+         * 1. AUDIO SYNTHESIS & SOUND EFFECTS (Web Audio API)
+         * --------------------------------------------------- */
+        let soundEnabled = true;
+        let speechEnabled = true;
+        let audioCtx = null;
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (AudioCtx) {
+                    audioCtx = new AudioCtx();
+                }
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        function playTone(type) {
+            if (!soundEnabled) return;
+            try {
+                const ctx = getAudioContext();
+                if (!ctx) return;
+
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                if (type === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, ctx.currentTime);
+                    osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.1);
+                    osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.2);
+                    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+                    osc.start(ctx.currentTime);
+                    osc.stop(ctx.currentTime + 0.5);
+                } else if (type === 'wrong') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(220, ctx.currentTime);
+                    osc.frequency.setValueAtTime(180, ctx.currentTime + 0.15);
+                    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+                    osc.start(ctx.currentTime);
+                    osc.stop(ctx.currentTime + 0.4);
+                } else if (type === 'bloom') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(587.33, ctx.currentTime);
+                    osc.frequency.setValueAtTime(880, ctx.currentTime + 0.15);
+                    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.6);
+                    osc.start(ctx.currentTime);
+                    osc.stop(ctx.currentTime + 0.6);
+                }
+            } catch (e) {
+                console.log("Audio play error:", e);
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('sound-text').innerText = soundEnabled ? "Âm thanh: Bật" : "Âm thanh: Tắt";
+            document.getElementById('sound-icon').innerText = soundEnabled ? "🔊" : "🔇";
+        }
+
+        function toggleSpeech() {
+            speechEnabled = !speechEnabled;
+            document.getElementById('speech-text').innerText = speechEnabled ? "Giọng đọc: Bật" : "Giọng đọc: Tắt";
+            document.getElementById('speech-icon').innerText = speechEnabled ? "🗣️" : "🔇";
+            if (!speechEnabled && window.speechSynthesis) {
+                window.speechSynthesis.cancel();
+            }
+        }
+
+        function speakText(text) {
+            if (!speechEnabled || !('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'vi-VN';
+            utterance.rate = 0.85;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        /* ---------------------------------------------------
+         * 2. QUESTIONS DATA (30 QUESTIONS EXACTLY)
+         * --------------------------------------------------- */
+        const questionsData = [
+            // --- TOÁN (15 CÂU) ---
+            {
+                id: 1, subject: 'math', type: 'choice',
+                question: 'Có 3 quả táo, thêm 2 quả táo. Hỏi có tất cả bao nhiêu quả táo?',
+                visual: { type: 'emoji_group', leftEmoji: '🍎', leftCount: 3, rightEmoji: '🍎', rightCount: 2 },
+                options: ['3 + 2 = 5', '3 + 1 = 4', '2 + 2 = 4', '3 + 3 = 6'],
+                correctText: '3 + 2 = 5'
+            },
+            {
+                id: 2, subject: 'math', type: 'choice',
+                question: 'Có 4 quả cam, thêm 3 quả cam. Hỏi có tất cả bao nhiêu quả cam?',
+                visual: { type: 'emoji_group', leftEmoji: '🍊', leftCount: 4, rightEmoji: '🍊', rightCount: 3 },
+                options: ['4 + 2 = 6', '4 + 3 = 7', '3 + 3 = 6', '4 + 4 = 8'],
+                correctText: '4 + 3 = 7'
+            },
+            {
+                id: 3, subject: 'math', type: 'choice',
+                question: 'Có 2 con bướm, thêm 4 con bướm. Hỏi có tất cả bao nhiêu con bướm?',
+                visual: { type: 'emoji_group', leftEmoji: '🦋', leftCount: 2, rightEmoji: '🦋', rightCount: 4 },
+                options: ['2 + 3 = 5', '2 + 4 = 6', '3 + 4 = 7', '2 + 5 = 7'],
+                correctText: '2 + 4 = 6'
+            },
+            {
+                id: 4, subject: 'math', type: 'choice',
+                question: 'Có 5 quả bóng, thêm 2 quả bóng. Phép tính nào phù hợp?',
+                visual: { type: 'emoji_group', leftEmoji: '🎈', leftCount: 5, rightEmoji: '🎈', rightCount: 2 },
+                options: ['5 + 1 = 6', '4 + 2 = 6', '5 + 2 = 7', '5 + 3 = 8'],
+                correctText: '5 + 2 = 7'
+            },
+            {
+                id: 5, subject: 'math', type: 'choice',
+                question: '', speechText: '1 cộng 1 bằng mấy?',
+                visual: { type: 'math_expr', text: '1 + 1 = ?' },
+                options: ['1', '2', '3', '4'],
+                correctText: '2'
+            },
+            {
+                id: 6, subject: 'math', type: 'choice',
+                question: '', speechText: '2 cộng 2 bằng mấy?',
+                visual: { type: 'math_expr', text: '2 + 2 = ?' },
+                options: ['3', '5', '4', '6'],
+                correctText: '4'
+            },
+            {
+                id: 7, subject: 'math', type: 'choice',
+                question: '', speechText: '3 cộng 4 bằng mấy?',
+                visual: { type: 'math_expr', text: '3 + 4 = ?' },
+                options: ['6', '7', '8', '5'],
+                correctText: '7'
+            },
+            {
+                id: 8, subject: 'math', type: 'choice',
+                question: '', speechText: '5 cộng 4 bằng mấy?',
+                visual: { type: 'math_expr', text: '5 + 4 = ?' },
+                options: ['8', '10', '9', '7'],
+                correctText: '9'
+            },
+            {
+                id: 9, subject: 'math', type: 'choice',
+                question: '', speechText: '2 cộng mấy bằng 5?',
+                visual: { type: 'math_expr', text: '2 + 🟩 = 5' },
+                options: ['2', '3', '4', '5'],
+                correctText: '3'
+            },
+            {
+                id: 10, subject: 'math', type: 'choice',
+                question: '', speechText: '4 cộng mấy bằng 6?',
+                visual: { type: 'math_expr', text: '4 + 🟩 = 6' },
+                options: ['1', '3', '2', '4'],
+                correctText: '2'
+            },
+            {
+                id: 11, subject: 'math', type: 'choice',
+                question: '', speechText: 'mấy cộng 3 bằng 7?',
+                visual: { type: 'math_expr', text: '🟩 + 3 = 7' },
+                options: ['3', '5', '4', '6'],
+                correctText: '4'
+            },
+            {
+                id: 12, subject: 'math', type: 'choice',
+                question: '', speechText: '5 cộng mấy bằng 9?',
+                visual: { type: 'math_expr', text: '5 + 🟩 = 9' },
+                options: ['2', '3', '4', '5'],
+                correctText: '4'
+            },
+            {
+                id: 13, subject: 'math', type: 'tf',
+                question: 'Phép tính đúng hay sai?', speechText: '3 cộng 2 bằng 5?',
+                visual: { type: 'math_expr', text: '3 + 2 = 5' },
+                options: ['ĐÚNG', 'SAI'],
+                correctText: 'ĐÚNG'
+            },
+            {
+                id: 14, subject: 'math', type: 'tf',
+                question: 'Phép tính đúng hay sai?', speechText: '4 cộng 3 bằng 6?',
+                visual: { type: 'math_expr', text: '4 + 3 = 6' },
+                options: ['ĐÚNG', 'SAI'],
+                correctText: 'SAI'
+            },
+            {
+                id: 15, subject: 'math', type: 'tf',
+                question: 'Phép tính đúng hay sai?', speechText: '6 cộng 4 bằng 10?',
+                visual: { type: 'math_expr', text: '6 + 4 = 10' },
+                options: ['ĐÚNG', 'SAI'],
+                correctText: 'ĐÚNG'
+            },
+
+            // --- TIẾNG VIỆT (15 CÂU) ---
+            {
+                id: 16, subject: 'vietnamese', type: 'choice',
+                question: 'Từ nào được viết đúng chính tả?',
+                visual: { type: 'text_highlight', text: '🌸 Quả v...' },
+                options: ['quả vải', 'quả vẩy', 'quả vãi', 'quả vậy'],
+                correctText: 'quả vải'
+            },
+            {
+                id: 17, subject: 'vietnamese', type: 'choice',
+                question: 'Chọn từ đúng chứa tiếng có vần "ôi":',
+                visual: { type: 'fill_word', text: 'vần ôi' },
+                options: ['quả vải', 'đĩa xôi', 'máy sấy', 'cỏ may'],
+                correctText: 'đĩa xôi'
+            },
+            {
+                id: 18, subject: 'vietnamese', type: 'choice',
+                question: 'Từ nào có chứa vần "ơi"?',
+                visual: { type: 'fill_word', text: 'vần ơi' },
+                options: ['lá rơi', 'mái nhà', 'gói quà', 'tem thư'],
+                correctText: 'lá rơi'
+            },
+            {
+                id: 19, subject: 'vietnamese', type: 'choice',
+                question: 'Chọn từ được viết đúng chính tả:',
+                visual: { type: 'text_highlight', text: 'Vần ôm / ơm' },
+                options: ['chổi rơm', 'chổi dơm', 'chổi rôm', 'chổi dôm'],
+                correctText: 'chổi rơm'
+            },
+            {
+                id: 20, subject: 'vietnamese', type: 'choice',
+                question: 'Chọn vần thích hợp điền vào chỗ trống:',
+                visual: { type: 'fill_word', text: 's..... tối' },
+                options: ['om', 'ơm', 'ôm', 'im'],
+                correctText: 'ơm'
+            },
+            {
+                id: 21, subject: 'vietnamese', type: 'choice',
+                question: 'Chọn vần thích hợp điền vào chỗ trống:',
+                visual: { type: 'fill_word', text: 'con d.....' },
+                options: ['ai', 'ơi', 'ay', 'ây'],
+                correctText: 'ơi'
+            },
+            {
+                id: 22, subject: 'vietnamese', type: 'choice',
+                question: 'Chọn vần thích hợp điền vào chỗ trống:',
+                visual: { type: 'fill_word', text: 'máy x.....' },
+                options: ['ai', 'ay', 'ây', 'oi'],
+                correctText: 'ay'
+            },
+            {
+                id: 23, subject: 'vietnamese', type: 'choice',
+                question: 'Chọn tiếng thích hợp điền vào chỗ trống:',
+                visual: { type: 'fill_word', text: 'đ..... mây' },
+                options: ['om', 'im', 'ám', 'ây'],
+                correctText: 'ám'
+            },
+            {
+                id: 24, subject: 'vietnamese', type: 'choice',
+                question: 'Chọn cụm từ phù hợp điền vào câu: "Chim non mới ..."',
+                visual: { type: 'text_highlight', text: 'Chim non mới ...' },
+                options: ['nở', 'ngủ', 'chạy', 'bay'],
+                correctText: 'nở'
+            },
+            {
+                id: 25, subject: 'vietnamese', type: 'sentence_order',
+                question: 'Chạm chọn các từ bên dưới để sắp xếp thành câu hoàn chỉnh:',
+                visual: { type: 'text_highlight', text: 'Ghép câu trọn vẹn' },
+                words: ['Chị em', 'Hà', 'chơi', 'trốn tìm'],
+                correctSentence: 'Chị em Hà chơi trốn tìm'
+            },
+            {
+                id: 26, subject: 'vietnamese', type: 'sentence_order',
+                question: 'Chạm chọn các từ bên dưới để sắp xếp thành câu hoàn chỉnh:',
+                visual: { type: 'text_highlight', text: 'Ghép câu trọn vẹn' },
+                words: ['Bố bé', 'đi', 'bộ đội'],
+                correctSentence: 'Bố bé đi bộ đội'
+            },
+            {
+                id: 27, subject: 'vietnamese', type: 'word_select',
+                question: 'Chạm chọn tiếng có vần "ai":',
+                visual: { type: 'text_highlight', text: 'Tìm vần ai' },
+                words: ['quả cà', 'mái nhà', 'cỏ may', 'máy sấy'],
+                correctWord: 'mái'
+            },
+            {
+                id: 28, subject: 'vietnamese', type: 'word_select',
+                question: 'Chạm chọn tiếng có vần "ay":',
+                visual: { type: 'text_highlight', text: 'Tìm vần ay' },
+                words: ['đĩa xôi', 'quả roi', 'cỏ may', 'gói quà'],
+                correctWord: 'may'
+            },
+            {
+                id: 29, subject: 'vietnamese', type: 'word_select',
+                question: 'Chạm chọn tiếng có vần "ôi":',
+                visual: { type: 'text_highlight', text: 'Tìm vần ôi' },
+                words: ['chim ngói', 'ngôi nhà', 'đám mây', 'quả vải'],
+                correctWord: 'ngôi'
+            },
+            {
+                id: 30, subject: 'vietnamese', type: 'word_select',
+                question: 'Chạm chọn tiếng có vần "oi":',
+                visual: { type: 'text_highlight', text: 'Tìm vần oi' },
+                words: ['đèn pin', 'quả vải', 'gói quà', 'tem thư'],
+                correctWord: 'gói'
+            }
+        ];
+
+        /* ---------------------------------------------------
+         * 3. GAME STATE & VARIABLES
+         * --------------------------------------------------- */
+        let studentName = "";
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let correctCount = 0;
+        let bloomedFlowersCount = 0;
+        let attemptsLeft = 2;
+        let flowerStates = new Array(30).fill(false); // false: unbloomed, true: bloomed
+        let userAnswers = new Array(30).fill(null);   // stores results for review
+
+        const flowerColorsMath = ['#ef4444', '#ec4899', '#eab308']; // Math colors (Red, Pink, Yellow)
+        const flowerColorsViet = ['#f59e0b', '#f97316', '#ec4899']; // VN colors (Yellow, Orange, Pink)
+
+        const praiseMessages = [
+            "Giỏi quá! 🌟",
+            "Chính xác rồi! 🎉",
+            "Con thật tuyệt vời! ❤️",
+            "Tuyệt lắm, thêm một bông hoa nở rồi! 🌸",
+            "Cô rất tự hào về con! ✨"
+        ];
+
+        const encourageMessages = [
+            "Chưa chính xác rồi, con thử lại nhé! 💪",
+            "Cố gắng lên, con sắp làm được rồi! 🌱",
+            "Con hãy suy nghĩ thật kỹ nhé! 🤔"
+        ];
+
+        /* ---------------------------------------------------
+         * 4. GAME INIT & FLOW CONTROL
+         * --------------------------------------------------- */
+        function startGame() {
+            const input = document.getElementById('student-name');
+            const errorMsg = document.getElementById('name-error');
+            const name = input.value.trim();
+
+            if (!name) {
+                errorMsg.classList.remove('hidden');
+                speakText("Bé ơi, hãy nhập tên trước khi bắt đầu nhé!");
+                return;
+            }
+
+            errorMsg.classList.add('hidden');
+            studentName = name;
+            document.getElementById('display-student-name').innerText = studentName;
+
+            // Reset Game Variables
+            currentQuestionIndex = 0;
+            score = 0;
+            correctCount = 0;
+            bloomedFlowersCount = 0;
+            flowerStates.fill(false);
+            userAnswers.fill(null);
+
+            // Switch Screen
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('end-screen').classList.add('hidden');
+            document.getElementById('game-screen').classList.remove('hidden');
+            document.getElementById('game-screen').classList.add('flex');
+
+            renderGarden();
+            loadQuestion();
+            speakText(`Xin chào ${studentName}, chúng ta cùng bắt đầu câu hỏi đầu tiên nào!`);
+        }
+
+        function renderGarden() {
+            const grid = document.getElementById('garden-grid');
+            grid.innerHTML = '';
+
+            for (let i = 0; i < 30; i++) {
+                const isMath = i < 15;
+                const palette = isMath ? flowerColorsMath : flowerColorsViet;
+                const bloomColor = palette[i % palette.length];
+                const isBloomed = flowerStates[i];
+                const isCurrent = i === currentQuestionIndex;
+
+                const flowerWrapper = document.createElement('div');
+                flowerWrapper.className = `flex flex-col items-center justify-center p-1 rounded-xl transition ${isCurrent ? 'ring-2 ring-pink-500 bg-white/60 scale-105' : ''}`;
+                
+                // 5-petal SVG Flower
+                const svgHtml = `
+                    <svg class="w-7 h-7 sm:w-9 sm:h-9 flower-svg ${isBloomed ? 'flower-bloomed' : 'opacity-60'}" viewBox="0 0 100 100">
+                        <g>
+                            <!-- Petals -->
+                            <circle cx="50" cy="25" r="18" fill="${isBloomed ? bloomColor : '#cbd5e1'}" />
+                            <circle cx="75" cy="43" r="18" fill="${isBloomed ? bloomColor : '#cbd5e1'}" />
+                            <circle cx="65" cy="72" r="18" fill="${isBloomed ? bloomColor : '#cbd5e1'}" />
+                            <circle cx="35" cy="72" r="18" fill="${isBloomed ? bloomColor : '#cbd5e1'}" />
+                            <circle cx="25" cy="43" r="18" fill="${isBloomed ? bloomColor : '#cbd5e1'}" />
+                            <!-- Center / Stem detail -->
+                            <circle cx="50" cy="50" r="16" fill="${isBloomed ? '#fef08a' : '#94a3b8'}" stroke="${isBloomed ? '#f59e0b' : '#64748b'}" stroke-width="4" />
+                            <text cx="50" cy="50" x="50" y="55" text-anchor="middle" font-size="16" font-weight="bold" fill="#334155">${i + 1}</text>
+                        </g>
+                    </svg>
+                `;
+                flowerWrapper.innerHTML = svgHtml;
+                grid.appendChild(flowerWrapper);
+            }
+
+            updateStats();
+        }
+
+        function updateStats() {
+            document.getElementById('stat-progress').innerText = `${currentQuestionIndex}/30`;
+            document.getElementById('stat-correct').innerText = correctCount;
+            document.getElementById('stat-score').innerText = score;
+            document.getElementById('stat-flowers').innerText = `${bloomedFlowersCount}/30`;
+            
+            const fillPercent = (currentQuestionIndex / 30) * 100;
+            document.getElementById('progress-bar-fill').style.width = `${fillPercent}%`;
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= 30) {
+                endGame();
+                return;
+            }
+
+            attemptsLeft = 2;
+            document.getElementById('attempts-left-tag').innerText = `Lượt làm: ${attemptsLeft}/2`;
+
+            const q = questionsData[currentQuestionIndex];
+            const isMath = q.subject === 'math';
+
+            // Set Subject Tag
+            const badge = document.getElementById('subject-badge');
+            badge.innerText = isMath ? 'MÔN TOÁN' : 'MÔN TIẾNG VIỆT';
+            badge.className = `px-4 py-1 rounded-full text-white font-extrabold text-sm shadow ${isMath ? 'bg-blue-500' : 'bg-pink-500'}`;
+
+            document.getElementById('question-number-tag').innerText = `Câu ${currentQuestionIndex + 1}/30`;
+            document.getElementById('question-text').innerText = q.question;
+
+            // Reset visual & feedback boxes
+            const visualBox = document.getElementById('visual-box');
+            visualBox.innerHTML = '';
+            
+            const feedbackBox = document.getElementById('feedback-box');
+            feedbackBox.className = 'hidden text-center py-2 px-4 rounded-2xl font-bold text-lg animate-bounce';
+            feedbackBox.innerText = '';
+
+            // Render Visual Component
+            renderVisual(q, visualBox);
+
+            // Render Options
+            renderOptions(q);
+
+            renderGarden();
+            readQuestionText();
+        }
+
+        function readQuestionText() {
+            const q = questionsData[currentQuestionIndex];
+            const textToSpeak = q.speechText || q.question;
+            if (textToSpeak) {
+                speakText(textToSpeak);
+            }
+        }
+
+        /* ---------------------------------------------------
+         * 4.5. VISUAL RENDERER (Renders images, math expressions, & text prompts)
+         * --------------------------------------------------- */
+        function renderVisual(q, container) {
+            if (!q.visual) return;
+
+            const vis = q.visual;
+            if (vis.type === 'emoji_group') {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flex items-center justify-center gap-3 sm:gap-6 bg-amber-50/80 p-3 sm:p-4 rounded-2xl border-2 border-amber-200 shadow-inner flex-wrap';
+                
+                // Left group
+                const leftDiv = document.createElement('div');
+                leftDiv.className = 'flex gap-1 text-2xl sm:text-3xl bg-white px-3 py-1.5 rounded-xl border border-amber-300 shadow-sm';
+                leftDiv.innerText = Array(vis.leftCount).fill(vis.leftEmoji).join(' ');
+                
+                // Plus sign
+                const plusSign = document.createElement('span');
+                plusSign.className = 'font-black text-2xl sm:text-3xl text-pink-600';
+                plusSign.innerText = '+';
+
+                // Right group
+                const rightDiv = document.createElement('div');
+                rightDiv.className = 'flex gap-1 text-2xl sm:text-3xl bg-white px-3 py-1.5 rounded-xl border border-amber-300 shadow-sm';
+                rightDiv.innerText = Array(vis.rightCount).fill(vis.rightEmoji).join(' ');
+
+                wrapper.appendChild(leftDiv);
+                wrapper.appendChild(plusSign);
+                wrapper.appendChild(rightDiv);
+                container.appendChild(wrapper);
+
+            } else if (vis.type === 'math_expr') {
+                const exprBox = document.createElement('div');
+                exprBox.className = 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-black text-3xl sm:text-5xl px-8 py-4 rounded-3xl shadow-lg border-b-4 border-indigo-800 tracking-wider text-center';
+                exprBox.innerText = vis.text;
+                container.appendChild(exprBox);
+
+            } else if (vis.type === 'fill_word') {
+                const fillBox = document.createElement('div');
+                fillBox.className = 'bg-pink-100 text-pink-700 font-extrabold text-2xl sm:text-4xl px-8 py-3 rounded-2xl border-2 border-pink-300 shadow-sm text-center';
+                fillBox.innerText = vis.text;
+                container.appendChild(fillBox);
+
+            } else if (vis.type === 'text_highlight') {
+                const textBox = document.createElement('div');
+                textBox.className = 'bg-emerald-100 text-emerald-800 font-extrabold text-xl sm:text-2xl px-6 py-3 rounded-2xl border-2 border-emerald-300 text-center shadow-sm';
+                textBox.innerText = vis.text;
+                container.appendChild(textBox);
+            }
+        }
+
+        function renderOptions(q) {
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            // Render options on single row for Q5 - Q12, grid for others
+            if (q.id >= 5 && q.id <= 12) {
+                container.className = 'flex flex-row justify-center items-center gap-3 sm:gap-6 mt-4 w-full';
+            } else {
+                container.className = 'grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4';
+            }
+
+            if (q.type === 'choice' || q.type === 'tf') {
+                // Shuffle options for display
+                const shuffledOpts = [...q.options].sort(() => Math.random() - 0.5);
+
+                shuffledOpts.forEach(opt => {
+                    const btn = document.createElement('button');
+                    if (q.id >= 5 && q.id <= 12) {
+                        btn.className = 'btn-4d flex-1 text-slate-800 font-black text-2xl md:text-3xl py-4 px-3 rounded-2xl border-2 border-slate-200 text-center active:scale-95';
+                    } else {
+                        btn.className = 'w-full bg-white hover:bg-pink-50 border-3 border-pink-200 hover:border-pink-400 text-slate-800 font-extrabold text-lg md:text-xl py-3.5 px-4 rounded-2xl shadow-sm transition active:scale-98 flex items-center justify-center';
+                    }
+                    btn.innerText = opt;
+                    btn.onclick = () => handleAnswerSelect(opt, q);
+                    container.appendChild(btn);
+                });
+            } else if (q.type === 'word_select') {
+                // Interactive word tapping
+                q.words.forEach(wordGroup => {
+                    const btn = document.createElement('button');
+                    btn.className = 'bg-white hover:bg-blue-50 border-3 border-blue-200 hover:border-blue-400 text-slate-800 font-extrabold text-lg md:text-xl py-3.5 px-4 rounded-2xl shadow-sm transition active:scale-98 flex items-center justify-center';
+                    btn.innerText = wordGroup;
+                    btn.onclick = () => {
+                        const containsTarget = wordGroup.includes(q.correctWord);
+                        handleAnswerSelect(containsTarget ? q.correctWord : wordGroup, q);
+                    };
+                    container.appendChild(btn);
+                });
+            } else if (q.type === 'sentence_order') {
+                container.className = 'flex flex-col items-center gap-4 mt-2 w-full';
+
+                let selectedWords = [];
+                const availableWords = [...q.words].sort(() => Math.random() - 0.5);
+
+                // Sentence construction drop target area
+                const sentenceDisplay = document.createElement('div');
+                sentenceDisplay.className = 'w-full min-h-[60px] bg-amber-50 border-2 border-dashed border-amber-300 rounded-2xl p-3 flex flex-wrap justify-center items-center gap-2 text-xl font-extrabold text-slate-800';
+                sentenceDisplay.innerHTML = '<span class="text-slate-400 text-sm italic">Chạm các từ bên dưới để ghép câu...</span>';
+
+                // Source word chips
+                const chipsContainer = document.createElement('div');
+                chipsContainer.className = 'flex flex-wrap justify-center gap-2';
+
+                function updateSentenceState() {
+                    sentenceDisplay.innerHTML = '';
+                    if (selectedWords.length === 0) {
+                        sentenceDisplay.innerHTML = '<span class="text-slate-400 text-sm italic">Chạm các từ bên dưới để ghép câu...</span>';
+                    } else {
+                        selectedWords.forEach((w, idx) => {
+                            const chip = document.createElement('span');
+                            chip.className = 'bg-pink-500 text-white px-3 py-1.5 rounded-xl font-bold shadow-sm cursor-pointer hover:bg-pink-600 transition';
+                            chip.innerText = w;
+                            chip.onclick = () => {
+                                selectedWords.splice(idx, 1);
+                                updateSentenceState();
+                            };
+                            sentenceDisplay.appendChild(chip);
+                        });
+                    }
+
+                    chipsContainer.innerHTML = '';
+                    availableWords.forEach((w, idx) => {
+                        const btn = document.createElement('button');
+                        const isUsed = selectedWords.includes(w);
+                        btn.className = `px-4 py-2 rounded-xl font-extrabold text-lg transition border-2 ${isUsed ? 'opacity-30 bg-slate-100 border-slate-200 cursor-not-allowed' : 'bg-white border-blue-300 hover:border-blue-500 text-blue-700 shadow-sm active:scale-95'}`;
+                        btn.innerText = w;
+                        btn.disabled = isUsed;
+                        btn.onclick = () => {
+                            selectedWords.push(w);
+                            updateSentenceState();
+                        };
+                        chipsContainer.appendChild(btn);
+                    });
+
+                    confirmBtn.disabled = selectedWords.length !== q.words.length;
+                    confirmBtn.className = `w-full max-w-xs py-3 rounded-full font-black text-lg transition ${confirmBtn.disabled ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg active:scale-95'}`;
+                }
+
+                const confirmBtn = document.createElement('button');
+                confirmBtn.innerText = '✅ KIỂM TRA';
+                confirmBtn.onclick = () => {
+                    const builtSentence = selectedWords.join(' ');
+                    handleAnswerSelect(builtSentence, q);
+                };
+
+                container.appendChild(sentenceDisplay);
+                container.appendChild(chipsContainer);
+                container.appendChild(confirmBtn);
+                updateSentenceState();
+            }
+        }
+
+        /* ---------------------------------------------------
+         * 5. ANSWER HANDLING & FEEDBACK
+         * --------------------------------------------------- */
+        function handleAnswerSelect(selectedVal, q) {
+            let isCorrect = false;
+
+            if (q.type === 'word_select') {
+                isCorrect = selectedVal === q.correctWord;
+            } else if (q.type === 'sentence_order') {
+                isCorrect = selectedVal === q.correctSentence;
+            } else {
+                isCorrect = selectedVal === q.correctText;
+            }
+
+            const feedbackBox = document.getElementById('feedback-box');
+            feedbackBox.classList.remove('hidden');
+
+            if (isCorrect) {
+                // Correct Answer Logic
+                playTone('correct');
+                playTone('bloom');
+                
+                const randomPraise = praiseMessages[Math.floor(Math.random() * praiseMessages.length)];
+                feedbackBox.className = 'text-center py-2 px-4 rounded-2xl font-extrabold text-lg bg-emerald-100 text-emerald-800 border-2 border-emerald-300 animate-bounce';
+                feedbackBox.innerText = `🎉 ${randomPraise}`;
+                speakText(randomPraise);
+
+                // Update score and flower blooming state
+                if (!flowerStates[currentQuestionIndex]) {
+                    flowerStates[currentQuestionIndex] = true;
+                    bloomedFlowersCount++;
+                    score += 10;
+                    correctCount++;
+                }
+
+                userAnswers[currentQuestionIndex] = {
+                    question: q.question,
+                    userAns: selectedVal,
+                    correctAns: q.correctSentence || q.correctText || q.correctWord,
+                    isCorrect: true
+                };
+
+                disableOptionButtons();
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    loadQuestion();
+                }, 1600);
+
+            } else {
+                // Incorrect Answer Logic
+                playTone('wrong');
+                attemptsLeft--;
+                document.getElementById('attempts-left-tag').innerText = `Lượt làm: ${attemptsLeft}/2`;
+
+                if (attemptsLeft > 0) {
+                    const randomEncourage = encourageMessages[Math.floor(Math.random() * encourageMessages.length)];
+                    feedbackBox.className = 'text-center py-2 px-4 rounded-2xl font-extrabold text-lg bg-amber-100 text-amber-800 border-2 border-amber-300';
+                    feedbackBox.innerText = `💡 ${randomEncourage}`;
+                    speakText(randomEncourage);
+                } else {
+                    // Out of attempts, reveal correct answer and move forward
+                    const correctAns = q.correctSentence || q.correctText || q.correctWord;
+                    feedbackBox.className = 'text-center py-2 px-4 rounded-2xl font-extrabold text-base bg-red-100 text-red-800 border-2 border-red-300';
+                    feedbackBox.innerText = `❌ Hết lượt! Đáp án đúng là: ${correctAns}`;
+                    speakText(`Hết lượt rồi! Đáp án đúng là ${correctAns}`);
+
+                    userAnswers[currentQuestionIndex] = {
+                        question: q.question,
+                        userAns: selectedVal,
+                        correctAns: correctAns,
+                        isCorrect: false
+                    };
+
+                    disableOptionButtons();
+                    setTimeout(() => {
+                        currentQuestionIndex++;
+                        loadQuestion();
+                    }, 2200);
+                }
+            }
+        }
+
+        function disableOptionButtons() {
+            const container = document.getElementById('options-container');
+            const btns = container.querySelectorAll('button');
+            btns.forEach(b => {
+                b.disabled = true;
+                b.classList.add('opacity-50', 'cursor-not-allowed');
+            });
+        }
+
+        /* ---------------------------------------------------
+         * 6. END GAME & REVIEW MODAL
+         * --------------------------------------------------- */
+        function endGame() {
+            document.getElementById('game-screen').classList.add('hidden');
+            document.getElementById('game-screen').classList.remove('flex');
+            document.getElementById('end-screen').classList.remove('hidden');
+
+            document.getElementById('final-name').innerText = studentName;
+            document.getElementById('final-correct').innerText = `${correctCount}/30`;
+            document.getElementById('final-flowers').innerText = `${bloomedFlowersCount}/30`;
+            document.getElementById('final-score').innerText = `${score}/300`;
+
+            const rankBadge = document.getElementById('rank-badge');
+            let rankText = "";
+            let rankBg = "";
+
+            if (correctCount >= 27) {
+                rankText = "🏆 BÔNG HOA XUẤT SẮC";
+                rankBg = "bg-gradient-to-r from-amber-400 to-pink-500";
+            } else if (correctCount >= 23) {
+                rankText = "🌟 BÔNG HOA CHĂM CHỈ";
+                rankBg = "bg-gradient-to-r from-emerald-400 to-teal-500";
+            } else if (correctCount >= 18) {
+                rankText = "🌱 BÔNG HOA TIẾN BỘ";
+                rankBg = "bg-gradient-to-r from-blue-400 to-indigo-500";
+            } else {
+                rankText = "☘️ BÔNG HOA CỐ GẮNG";
+                rankBg = "bg-gradient-to-r from-slate-400 to-slate-600";
+            }
+
+            rankBadge.innerText = rankText;
+            rankBadge.className = `inline-block px-6 py-2 rounded-full font-black text-lg text-white shadow-md ${rankBg}`;
+
+            speakText(`Chúc mừng ${studentName} đã hoàn thành bài tập với ${score} điểm!`);
+        }
+
+        function restartGame() {
+            document.getElementById('end-screen').classList.add('hidden');
+            document.getElementById('start-screen').classList.remove('hidden');
+            document.getElementById('student-name').value = '';
+        }
+
+        function toggleReviewModal(show) {
+            const modal = document.getElementById('review-modal');
+            if (show) {
+                renderReviewList();
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function renderReviewList() {
+            const listContainer = document.getElementById('review-list');
+            listContainer.innerHTML = '';
+
+            questionsData.forEach((q, idx) => {
+                const res = userAnswers[idx];
+                const isCorrect = res && res.isCorrect;
+
+                const item = document.createElement('div');
+                item.className = `p-3 rounded-2xl border-2 ${isCorrect ? 'bg-emerald-50 border-emerald-200' : 'bg-red-50 border-red-200'} space-y-1`;
+
+                item.innerHTML = `
+                    <div class="flex justify-between font-extrabold">
+                        <span class="${q.subject === 'math' ? 'text-blue-600' : 'text-pink-600'}">Câu ${idx + 1}: ${q.question}</span>
+                        <span>${isCorrect ? '✅ Đúng (+10đ)' : '❌ Chưa đúng (0đ)'}</span>
+                    </div>
+                    <div class="text-xs font-semibold text-slate-600">
+                        Đáp án đúng: <span class="font-bold text-emerald-700">${q.correctText || q.correctWord}</span>
+                        ${res && !res.isCorrect ? `| Bạn chọn: <span class="font-bold text-red-600">${res.userAns}</span>` : ''}
+                    </div>
+                `;
+
+                listContainer.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>
